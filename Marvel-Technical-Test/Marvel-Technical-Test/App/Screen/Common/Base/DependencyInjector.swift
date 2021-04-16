@@ -11,7 +11,7 @@ import Foundation
 class DependencyInjector {
     
     // MARK: - Client
-    private var network: SessionNetwork {
+    private var network: SessionNetwork & MarvelNetwork {
         switch AppEnvironment.shared.scheme {
         case .production:
             return NetworkClient(with: Downloader())
@@ -27,10 +27,11 @@ class DependencyInjector {
     
     // MARK: - Repository
     private lazy var sessionRepository: SessionRepository = SessionRepositoryImpl(network: network, userData: userData)
+    private lazy var marvelRepository: MarvelRepository = MarvelRepositoryImpl(network: network)
     
     // MARK: - UseCases
     lazy var loginUseCase : LoginUseCase = LoginUseCase(repository: self.sessionRepository)
-    
+    lazy var getCharacterUseCase: GetCharactersUseCase = GetCharactersUseCase(repository: marvelRepository)
     
     // MARK: - ViewControllers
     func firstViewController() -> ViewController {

@@ -13,22 +13,40 @@ import RxCocoa
 class HomeViewModel: ViewModel, ViewModelType {
     
     let router: HomeRouter
+    let getCharactersUseCase: GetCharactersUseCase
     
-    struct Input { }
+    fileprivate let characters: BehaviorRelay<[Character]> = BehaviorRelay(value: [])
     
-    struct Output { }
+    struct Input {
+        let trigger: Observable<Void>
+    }
+    
+    struct Output {
+        let characters: Observable<[Character]>
+    }
     
     // MARK: init & deinit
-    init(router: HomeRouter) {
+    init(router: HomeRouter, getCharactersUseCase: GetCharactersUseCase) {
         self.router = router
+        self.getCharactersUseCase = getCharactersUseCase
         super.init(router: router)
     }
     
     // MARK: Binding
     func transform(input: Input) -> Output {
-        return Output()
+        input.trigger.subscribe { [weak self](_) in
+            guard let weakSelf = self else { return }
+            weakSelf.showLoading()
+            
+            weakSelf.getCharactersUseCase().subscribe(onSuccess: { (characters) in
+                weakSelf.characters.accept(characters)
+                weakSelf.hideLoading()
+            }, onError: { (error) in
+                weakSelf.process(error: error)
+            }).disposed(by: weakSelf.disposeBag)
+            
+        }.disposed(by: disposeBag)
+        return Output(characters: characters.asObservable())
     }
-    
-    // MARK: Logic
 }
 

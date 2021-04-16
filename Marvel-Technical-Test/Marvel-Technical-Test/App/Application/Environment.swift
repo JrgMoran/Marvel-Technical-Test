@@ -27,6 +27,10 @@ public struct AppEnvironment {
     
     static let shared: AppEnvironment = AppEnvironment()
     
+    let publicKey: String = "6c75002dea8b238a1509ba6cca02c164"
+    
+    let privateKey: String = "e541e6ca37bd2574daafee1a01102dce94288c10"
+    
     public var scheme: Schemes {
         get {
             #if DEV

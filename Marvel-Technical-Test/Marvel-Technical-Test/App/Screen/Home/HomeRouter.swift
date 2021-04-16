@@ -13,7 +13,7 @@ class HomeRouter: Router {
     override init() {
         super.init()
         let viewController = HomeViewController()
-        viewController.viewModel = HomeViewModel(router: self)
+        viewController.viewModel = HomeViewModel(router: self, getCharactersUseCase: injector.getCharacterUseCase)
         navigate(to: viewController, mode: .new)
     }
 }

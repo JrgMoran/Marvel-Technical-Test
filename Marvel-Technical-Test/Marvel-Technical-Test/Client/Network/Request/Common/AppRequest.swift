@@ -25,8 +25,8 @@ protocol AppRequest {
     var endpoint: AppEndpoint { get }
     var method: AppRequestMethod { get }
     var body: [String: Any]? { get }
-    var urlParams: [String: String]? { get }
-    var headers: [String: String] { get }
+    var urlParams: [String:String]? { get }
+    var headers: [String:String] { get }
 }
 
 extension AppRequest {
@@ -65,10 +65,10 @@ extension AppRequest {
     }
     
     func addUrlParameters(in request: inout URLRequest) {
-        if let parameters = urlParams {
-            let params = parameters.map { "\(escape($0))=\(escape($1))" }.joined(separator: "&")
-            request.url = URL(string: self.endpoint.url!.absoluteString + "?" + params)!
-        }
+        var parameters = marvelUrlParameters
+        parameters.merge(dict: urlParams)
+        let params = parameters.map { "\(escape($0))=\(escape($1))" }.joined(separator: "&")
+        request.url = URL(string: self.endpoint.url!.absoluteString + "?" + params)!
     }
     
     public func addBody(toRequest: inout URLRequest) {
@@ -90,5 +90,14 @@ extension AppRequest {
         var allowedCharacterSet = CharacterSet.urlQueryAllowed
         allowedCharacterSet.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
         return string.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) ?? string
+    }
+    
+    var marvelUrlParameters: [String:String] {
+        let ts = "\(Date().timeIntervalSince1970)"
+        let publicKey = AppEnvironment.shared.publicKey
+        let privateKey = AppEnvironment.shared.privateKey
+        return ["ts":ts,
+                "apikey":publicKey,
+                "hash":"\(ts)\(privateKey)\(publicKey)".encryptMD5]
     }
 }

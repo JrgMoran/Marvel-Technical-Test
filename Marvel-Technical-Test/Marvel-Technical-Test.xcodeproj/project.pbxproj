@@ -19,6 +19,13 @@
 		7D2A2F1A250504EA00E058CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2A2F19250504EA00E058CE /* Session.swift */; };
 		7D2A2F2725050E8F00E058CE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2A2F2625050E8F00E058CE /* Error.swift */; };
 		7D2A2F2B25052B5200E058CE /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2A2F2A25052B5200E058CE /* Downloader.swift */; };
+		7D41E3772629D8E40055E327 /* GetCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3762629D8E40055E327 /* GetCharactersUseCase.swift */; };
+		7D41E37A2629D9BA0055E327 /* MarvelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3792629D9BA0055E327 /* MarvelRepository.swift */; };
+		7D41E37D2629D9FF0055E327 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E37C2629D9FF0055E327 /* Character.swift */; };
+		7D41E3802629DADF0055E327 /* MarvelRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E37F2629DADF0055E327 /* MarvelRepositoryImpl.swift */; };
+		7D41E3832629E13D0055E327 /* MarvelNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3822629E13D0055E327 /* MarvelNetwork.swift */; };
+		7D41E3862629E4A30055E327 /* ListCharacterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3852629E4A30055E327 /* ListCharacterRequest.swift */; };
+		7D41E3892629F19A0055E327 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3882629F19A0055E327 /* Dictionary+Extensions.swift */; };
 		7D526B5125F39644008D7844 /* KeyChainImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526B5025F39644008D7844 /* KeyChainImpl.swift */; };
 		7D526BFE25F93419008D7844 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526BFA25F93419008D7844 /* SplashRouter.swift */; };
 		7D526BFF25F93419008D7844 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526BFB25F93419008D7844 /* SplashViewController.swift */; };
@@ -96,6 +103,13 @@
 		7D2A2F19250504EA00E058CE /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7D2A2F2625050E8F00E058CE /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		7D2A2F2A25052B5200E058CE /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		7D41E3762629D8E40055E327 /* GetCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersUseCase.swift; sourceTree = "<group>"; };
+		7D41E3792629D9BA0055E327 /* MarvelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRepository.swift; sourceTree = "<group>"; };
+		7D41E37C2629D9FF0055E327 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		7D41E37F2629DADF0055E327 /* MarvelRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRepositoryImpl.swift; sourceTree = "<group>"; };
+		7D41E3822629E13D0055E327 /* MarvelNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelNetwork.swift; sourceTree = "<group>"; };
+		7D41E3852629E4A30055E327 /* ListCharacterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCharacterRequest.swift; sourceTree = "<group>"; };
+		7D41E3882629F19A0055E327 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 		7D526B5025F39644008D7844 /* KeyChainImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainImpl.swift; sourceTree = "<group>"; };
 		7D526BFA25F93419008D7844 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 		7D526BFB25F93419008D7844 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +195,7 @@
 			children = (
 				7D0227C725F14D2B00943686 /* Errors */,
 				7D0227C325F1407400943686 /* SessionRepository.swift */,
+				7D41E3792629D9BA0055E327 /* MarvelRepository.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -198,6 +213,7 @@
 			children = (
 				7D0227D725F14F6800943686 /* SessionNetwork.swift */,
 				7D77C4EF25F38EA800F2A801 /* UserData.swift */,
+				7D41E3822629E13D0055E327 /* MarvelNetwork.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -206,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				7DF0EAEB25FA80770006B72A /* Common */,
+				7D41E3852629E4A30055E327 /* ListCharacterRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -413,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				7D2A2F12250503A900E058CE /* LoginUseCase.swift */,
+				7D41E3762629D8E40055E327 /* GetCharactersUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -428,6 +446,7 @@
 				7DC74602250D20910018CBE0 /* Strings+Extensions.swift */,
 				7DC74604250D30140018CBE0 /* Date+Extensions.swift */,
 				7DC74606250D35640018CBE0 /* Double+Extensions.swift */,
+				7D41E3882629F19A0055E327 /* Dictionary+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -437,6 +456,7 @@
 			children = (
 				7D0227DF25F1515E00943686 /* RelogableRepository.swift */,
 				7D0227D325F14EC000943686 /* SessionRepositoryImpl.swift */,
+				7D41E37F2629DADF0055E327 /* MarvelRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -445,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				7D2A2F19250504EA00E058CE /* Session.swift */,
+				7D41E37C2629D9FF0055E327 /* Character.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -667,12 +688,16 @@
 				7D77C4F025F38EA800F2A801 /* UserData.swift in Sources */,
 				7D77C4ED25F38E3800F2A801 /* UserDataImpl.swift in Sources */,
 				7DF0EB1426065AAE0006B72A /* AlertViewSkin.swift in Sources */,
+				7D41E3832629E13D0055E327 /* MarvelNetwork.swift in Sources */,
 				7DB2C44E2505380600E52BEF /* Observable+Extension.swift in Sources */,
 				7DF0EAED25FA80870006B72A /* AppRequest.swift in Sources */,
+				7D41E3892629F19A0055E327 /* Dictionary+Extensions.swift in Sources */,
 				7DB848C92503ECA200C9D6B5 /* ViewModel.swift in Sources */,
 				7D2A2F112504CAD500E058CE /* KeyboardScrollView.swift in Sources */,
 				7DF0EAE825FA7C6C0006B72A /* HomeViewModel.swift in Sources */,
+				7D41E37A2629D9BA0055E327 /* MarvelRepository.swift in Sources */,
 				7DF0EAE725FA7C6C0006B72A /* HomeViewController.swift in Sources */,
+				7D41E3862629E4A30055E327 /* ListCharacterRequest.swift in Sources */,
 				7DB848CA2503ECA200C9D6B5 /* Router.swift in Sources */,
 				7DF0EAF025FA80E30006B72A /* AppEndpoint.swift in Sources */,
 				7DB2C47A25067F4100E52BEF /* Colors+Extensions.swift in Sources */,
@@ -692,6 +717,7 @@
 				7DF0EAE625FA7C6C0006B72A /* HomeRouter.swift in Sources */,
 				7DC74607250D35640018CBE0 /* Double+Extensions.swift in Sources */,
 				7DB848AA2503BACA00C9D6B5 /* ResourcingText.swift in Sources */,
+				7D41E3772629D8E40055E327 /* GetCharactersUseCase.swift in Sources */,
 				7DB848A92503BACA00C9D6B5 /* ResourcingImages.swift in Sources */,
 				7DB2C47B25067F4100E52BEF /* Button+Skins.swift in Sources */,
 				7DB848CC2503ECA200C9D6B5 /* ViewController.swift in Sources */,
@@ -699,6 +725,7 @@
 				7D0227E825F154DF00943686 /* NetworkClient.swift in Sources */,
 				7D0227C425F1407400943686 /* SessionRepository.swift in Sources */,
 				7DB8488C2503B4F800C9D6B5 /* SceneDelegate.swift in Sources */,
+				7D41E37D2629D9FF0055E327 /* Character.swift in Sources */,
 				7DA978C325069F4800BE95DB /* UIImage+Extensions.swift in Sources */,
 				7DC74605250D30140018CBE0 /* Date+Extensions.swift in Sources */,
 				7DB2C47D250682F700E52BEF /* Label+Skins.swift in Sources */,
@@ -707,6 +734,7 @@
 				7D526BFF25F93419008D7844 /* SplashViewController.swift in Sources */,
 				7D2A2F2B25052B5200E058CE /* Downloader.swift in Sources */,
 				7D0227D825F14F6800943686 /* SessionNetwork.swift in Sources */,
+				7D41E3802629DADF0055E327 /* MarvelRepositoryImpl.swift in Sources */,
 				7DB2C47725067E8E00E52BEF /* Fonts+Extension.swift in Sources */,
 				7DB2C481250690DA00E52BEF /* R.swift in Sources */,
 				7DF0EB0F260652A50006B72A /* AlertView.swift in Sources */,

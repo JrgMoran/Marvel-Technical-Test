@@ -37,7 +37,7 @@ class HomeViewController: ViewController {
     // MARK: Binding
     private func bindViewModel() {
         assert(viewModel != nil)
-        let input = HomeViewModel.Input()
+        let input = HomeViewModel.Input(trigger: rx.viewDidAppear)
         let _ = viewModel.transform(input: input)
     }
 

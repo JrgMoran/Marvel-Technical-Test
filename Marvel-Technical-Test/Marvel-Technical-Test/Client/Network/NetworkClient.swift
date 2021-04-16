@@ -24,5 +24,22 @@ extension NetworkClient: SessionNetwork {
         """
         return decoder(from: Data(json.utf8))
     }
-    
 }
+
+extension NetworkClient: MarvelNetwork {
+    func listCharacters() -> Single<[Character]> {
+        return Single.create{[weak self] (single) -> Disposable in
+            self?.downloader.execute(with: ListCharacterRequest().request, completion: {[weak self] (result) in
+                if let weakSelf = self {
+                    
+                    single(weakSelf.decoderObjectsOfSingleEvent(from: result))
+                } else {
+                    single(SingleEvent.error(AppError.noSelf))
+                }
+            })
+            return Disposables.create {}
+        }
+    }
+}
+
+
