@@ -27,12 +27,11 @@ extension NetworkClient: SessionNetwork {
 }
 
 extension NetworkClient: MarvelNetwork {
-    func listCharacters() -> Single<[Character]> {
+    func listCharacters() -> Single<MarvelResponse<[Character]>> {
         return Single.create{[weak self] (single) -> Disposable in
             self?.downloader.execute(with: ListCharacterRequest().request, completion: {[weak self] (result) in
                 if let weakSelf = self {
-                    
-                    single(weakSelf.decoderObjectsOfSingleEvent(from: result))
+                    single(weakSelf.decoderObjectOfSingleEvent(from: result))
                 } else {
                     single(SingleEvent.error(AppError.noSelf))
                 }

@@ -18,6 +18,6 @@ class MarvelRepositoryImpl: MarvelRepository {
     }
     
     func listCharacters() -> Single<[Character]> {
-        return network.listCharacters()
+        return network.listCharacters().map({ $0.data.results })
     }
 }

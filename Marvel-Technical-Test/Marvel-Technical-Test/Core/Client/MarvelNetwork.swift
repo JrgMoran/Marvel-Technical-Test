@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol MarvelNetwork {
-    func listCharacters() -> Single<[Character]>
+    func listCharacters() -> Single<MarvelResponse<[Character]>>
 }
