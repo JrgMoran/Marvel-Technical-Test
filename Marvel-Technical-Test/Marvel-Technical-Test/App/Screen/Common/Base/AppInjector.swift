@@ -91,6 +91,10 @@ final class AppInjector {
         container.register(HomeViewModel.self) { r, router in
             HomeViewModel(router: router, getCharactersUseCase: r.resolve(GetCharactersUseCase.self)!)
         }
+        
+        container.register(CharacterCellViewModel.self) { r in
+            CharacterCellViewModel()
+        }
 
     }
 }

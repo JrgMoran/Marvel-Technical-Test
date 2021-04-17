@@ -47,7 +47,8 @@ class HomeViewController: ViewController, UITableViewDelegate {
                                         indexTap: tableView.rx.itemSelected.map({ $0.row }).asObservable())
         let output = viewModel.transform(input: input)
         
-        output.characters.bind(to: tableView.rx.items(cellIdentifier: CharacterCell.identifier, cellType: CharacterCell.self)){ (row,item,cell) in
+        output.characters.bind(to: tableView.rx.items(cellIdentifier: CharacterCell.identifier,
+                                                      cellType: CharacterCell.self)){ (row,item,cell) in
                     cell.configure(with: item)
         }.disposed(by: disposeBag)
     }

@@ -32,6 +32,7 @@
 		7D41E3A2262AE4680055E327 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3A1262AE4680055E327 /* Cache.swift */; };
 		7D41E3A8262AE71D0055E327 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3A6262AE71D0055E327 /* CharacterCell.swift */; };
 		7D41E3A9262AE71D0055E327 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D41E3A7262AE71D0055E327 /* CharacterCell.xib */; };
+		7D41E3AC262AF1580055E327 /* CharacterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3AB262AF1580055E327 /* CharacterCellViewModel.swift */; };
 		7D526B5125F39644008D7844 /* KeyChainImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526B5025F39644008D7844 /* KeyChainImpl.swift */; };
 		7D526BFE25F93419008D7844 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526BFA25F93419008D7844 /* SplashRouter.swift */; };
 		7D526BFF25F93419008D7844 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526BFB25F93419008D7844 /* SplashViewController.swift */; };
@@ -121,6 +122,7 @@
 		7D41E3A1262AE4680055E327 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		7D41E3A6262AE71D0055E327 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		7D41E3A7262AE71D0055E327 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
+		7D41E3AB262AF1580055E327 /* CharacterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewModel.swift; sourceTree = "<group>"; };
 		7D526B5025F39644008D7844 /* KeyChainImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainImpl.swift; sourceTree = "<group>"; };
 		7D526BFA25F93419008D7844 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 		7D526BFB25F93419008D7844 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			children = (
 				7D41E3A6262AE71D0055E327 /* CharacterCell.swift */,
 				7D41E3A7262AE71D0055E327 /* CharacterCell.xib */,
+				7D41E3AB262AF1580055E327 /* CharacterCellViewModel.swift */,
 			);
 			path = CharacterCell;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				7D0227D425F14EC000943686 /* SessionRepositoryImpl.swift in Sources */,
 				7D526B5125F39644008D7844 /* KeyChainImpl.swift in Sources */,
 				7D0227E025F1515E00943686 /* RelogableRepository.swift in Sources */,
+				7D41E3AC262AF1580055E327 /* CharacterCellViewModel.swift in Sources */,
 				7DC74603250D20910018CBE0 /* Strings+Extensions.swift in Sources */,
 				7D0227EF25F1551C00943686 /* Network.swift in Sources */,
 				7D41E38C2629FA550055E327 /* MarvelResponse.swift in Sources */,
