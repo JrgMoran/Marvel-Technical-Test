@@ -18,20 +18,35 @@ final class AppInjector {
         setup()
     }
     
-    private var network: SessionNetwork & MarvelNetwork {
-        switch AppEnvironment.shared.scheme {
-        case .production:
-            return NetworkClient(with: Downloader())
-        case .mock:
-            return NetworkMockClient()
-        case .dev:
-            return NetworkClient(with: Downloader())
-        }
-    }
-    
     private func setup() {
+        //MARK: - Helpers
+        container.register(Downloader.self) { r in
+            Downloader()
+        }
         
         // MARK: - Client
+        container.register(SessionNetwork.self) { r in
+            switch AppEnvironment.shared.scheme {
+            case .production:
+                return NetworkClient(with: r.resolve(Downloader.self)!)
+            case .mock:
+                return NetworkMockClient()
+            case .dev:
+                return NetworkClient(with: r.resolve(Downloader.self)!)
+            }
+        }
+        
+        container.register(MarvelNetwork.self) { r in
+            switch AppEnvironment.shared.scheme {
+            case .production:
+                return NetworkClient(with: r.resolve(Downloader.self)!)
+            case .mock:
+                return NetworkMockClient()
+            case .dev:
+                return NetworkClient(with: r.resolve(Downloader.self)!)
+            }
+        }
+        
         container.register(KeyChain.self) { r in
             KeyChainImpl()
         }
@@ -41,17 +56,17 @@ final class AppInjector {
         }
         
         container.register(SessionRepository.self) { r in
-            SessionRepositoryImpl(network: self.network,
+            SessionRepositoryImpl(network: r.resolve(SessionNetwork.self)!,
                                   userData: r.resolve(UserData.self)!)
         }
         
         container.register(RelogableRepository.self) { r in
-            SessionRepositoryImpl(network: self.network,
+            SessionRepositoryImpl(network: r.resolve(SessionNetwork.self)!,
                                   userData: r.resolve(UserData.self)!)
         }
         
         container.register(MarvelRepository.self) { r in
-            MarvelRepositoryImpl(network: self.network)
+            MarvelRepositoryImpl(network: r.resolve(MarvelNetwork.self)!)
         }
         
         // MARK: - UseCases
