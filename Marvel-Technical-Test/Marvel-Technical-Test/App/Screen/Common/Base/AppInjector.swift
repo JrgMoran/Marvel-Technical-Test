@@ -59,6 +59,12 @@ final class AppInjector {
             UserDataImpl(keyChain: r.resolve(KeyChain.self))
         }
         
+        container.register(StorageImage.self) { r in
+            StorageImage(downloader: r.resolve(Downloader.self)!)
+        }
+        
+        // MARK: - Repositories
+        
         container.register(SessionRepository.self) { r in
             SessionRepositoryImpl(network: r.resolve(SessionNetwork.self)!,
                                   userData: r.resolve(UserData.self)!)
@@ -74,6 +80,10 @@ final class AppInjector {
                                  cache: r.resolve(Cache.self)!)
         }
         
+        container.register(DataRepository.self) { r in
+            DataRepositoryImpl(storageImage: r.resolve(StorageImage.self)!)
+        }
+        
         // MARK: - UseCases
         container.register(LoginUseCase.self) { r in
             LoginUseCase(repository: r.resolve(SessionRepository.self)!)
@@ -81,6 +91,10 @@ final class AppInjector {
         
         container.register(GetCharactersUseCase.self) { r in
             GetCharactersUseCase(repository: r.resolve(MarvelRepository.self)!)
+        }
+        
+        container.register(GetDataUseCase.self) { r in
+            GetDataUseCase(repository: r.resolve(DataRepository.self)!)
         }
         
         // MARK: - ViewModels
@@ -93,7 +107,7 @@ final class AppInjector {
         }
         
         container.register(CharacterCellViewModel.self) { r in
-            CharacterCellViewModel()
+            CharacterCellViewModel(getDataUseCase: r.resolve(GetDataUseCase.self)!)
         }
 
     }

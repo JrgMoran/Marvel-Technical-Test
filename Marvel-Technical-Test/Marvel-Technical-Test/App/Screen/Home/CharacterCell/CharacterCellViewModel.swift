@@ -16,16 +16,25 @@ class CharacterCellViewModel: ViewModel & ViewModelType {
     }
     
     struct Output {
-        let imageData: Observable<Data?>
+        let image: Observable<UIImage?>
     }
     
-    var imageData: BehaviorSubject<Data?> = BehaviorSubject(value: nil)
+    var image: BehaviorSubject<UIImage?> = BehaviorSubject(value: nil)
+    let getDataUseCase: GetDataUseCase
     
-    init() {
+    init(getDataUseCase: GetDataUseCase) {
+        self.getDataUseCase = getDataUseCase
         super.init(router: nil)
     }
     
     func transform(input: Input) -> Output {
-        return Output(imageData: imageData.asObservable())
+        getDataUseCase(from: input.character.thumbnail.urlStr)
+            .subscribe {[weak self] (data) in
+                self?.image.on(.next(data))
+            } onError: { (_) in
+                
+            }.disposed(by: disposeBag)
+
+        return Output(image: image.asObservable())
     }
 }

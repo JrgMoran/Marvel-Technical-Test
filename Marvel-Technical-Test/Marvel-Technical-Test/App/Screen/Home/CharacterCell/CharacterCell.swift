@@ -23,7 +23,7 @@ class CharacterCell: UITableViewCell {
         nameCharacter.text(character.name, withSkin: LabelSkin.cellName)
         let output = viewModel.transform(input: CharacterCellViewModel.Input(character: character))
         
-        output.imageData.filterNil().map({ UIImage(data: $0)}).bind(to: imageCharacter.rx.image).disposed(by: disposeBag)
+        output.image.filterNil().bind(to: imageCharacter.rx.image).disposed(by: disposeBag)
     }
     
     override func prepareForReuse() {

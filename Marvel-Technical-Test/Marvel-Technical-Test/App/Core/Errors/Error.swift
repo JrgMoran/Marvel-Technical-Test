@@ -19,6 +19,7 @@ enum AppError: Error, Equatable {
     case badJson
     case badArrayJson
     case noSelf
+    case badUrl
     
     case other(error: Error)
     

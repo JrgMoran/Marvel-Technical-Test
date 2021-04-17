@@ -64,7 +64,11 @@ enum ItemType: String, Codable {
 // MARK: - Thumbnail
 struct Thumbnail: Codable {
     let path: String
-    let thumbnailExtension: Extension
+    let thumbnailExtension: ThumbnailExtension
+    
+    var urlStr: String {
+        "\(path).\(thumbnailExtension.rawValue)"
+    }
     
     enum CodingKeys: String, CodingKey {
         case path
@@ -72,7 +76,7 @@ struct Thumbnail: Codable {
     }
 }
 
-enum Extension: String, Codable {
+enum ThumbnailExtension: String, Codable {
     case gif = "gif"
     case jpg = "jpg"
 }

@@ -60,6 +60,9 @@ class ViewModel {
         case .other(error: let error):
             // TODO
             break;
+        case .badUrl:
+            // TODO
+            break;
         }
         showAlert(skin: AlertViewSkin.warning(text: R.text.deafult_error))
         

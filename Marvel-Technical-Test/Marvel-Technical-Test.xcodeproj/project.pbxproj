@@ -14,6 +14,11 @@
 		7D0227E825F154DF00943686 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0227E725F154DF00943686 /* NetworkClient.swift */; };
 		7D0227EB25F154F000943686 /* NetworkMockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0227EA25F154F000943686 /* NetworkMockClient.swift */; };
 		7D0227EF25F1551C00943686 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0227EE25F1551C00943686 /* Network.swift */; };
+		7D161C55262AF99C00735881 /* GetDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D161C54262AF99C00735881 /* GetDataUseCase.swift */; };
+		7D161C58262AF9CC00735881 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D161C57262AF9CC00735881 /* DataRepository.swift */; };
+		7D161C5B262B368F00735881 /* DataRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D161C5A262B368F00735881 /* DataRepositoryImpl.swift */; };
+		7D161C60262B38DD00735881 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D161C5F262B38DD00735881 /* Storage.swift */; };
+		7D161C63262B470B00735881 /* StorageImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D161C62262B470B00735881 /* StorageImage.swift */; };
 		7D2A2F112504CAD500E058CE /* KeyboardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2A2F102504CAD500E058CE /* KeyboardScrollView.swift */; };
 		7D2A2F13250503A900E058CE /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2A2F12250503A900E058CE /* LoginUseCase.swift */; };
 		7D2A2F1A250504EA00E058CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2A2F19250504EA00E058CE /* Session.swift */; };
@@ -104,6 +109,11 @@
 		7D0227E725F154DF00943686 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		7D0227EA25F154F000943686 /* NetworkMockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMockClient.swift; sourceTree = "<group>"; };
 		7D0227EE25F1551C00943686 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		7D161C54262AF99C00735881 /* GetDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataUseCase.swift; sourceTree = "<group>"; };
+		7D161C57262AF9CC00735881 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		7D161C5A262B368F00735881 /* DataRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepositoryImpl.swift; sourceTree = "<group>"; };
+		7D161C5F262B38DD00735881 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		7D161C62262B470B00735881 /* StorageImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageImage.swift; sourceTree = "<group>"; };
 		7D2A2F102504CAD500E058CE /* KeyboardScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScrollView.swift; sourceTree = "<group>"; };
 		7D2A2F12250503A900E058CE /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		7D2A2F19250504EA00E058CE /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -208,6 +218,7 @@
 				7D0227C725F14D2B00943686 /* Errors */,
 				7D0227C325F1407400943686 /* SessionRepository.swift */,
 				7D41E3792629D9BA0055E327 /* MarvelRepository.swift */,
+				7D161C57262AF9CC00735881 /* DataRepository.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -236,6 +247,15 @@
 				7D41E3852629E4A30055E327 /* ListCharacterRequest.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		7D161C5E262B38C800735881 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				7D161C5F262B38DD00735881 /* Storage.swift */,
+				7D161C62262B470B00735881 /* StorageImage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		7D41E39F262AE4440055E327 /* Network */ = {
@@ -292,6 +312,7 @@
 		7D77C4EA25F38DBB00F2A801 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				7D161C5E262B38C800735881 /* Storage */,
 				7D77C4EB25F38DC300F2A801 /* BBDD */,
 				7D77C4EC25F38E3800F2A801 /* UserDataImpl.swift */,
 				7D526B5025F39644008D7844 /* KeyChainImpl.swift */,
@@ -471,6 +492,7 @@
 			children = (
 				7D2A2F12250503A900E058CE /* LoginUseCase.swift */,
 				7D41E3762629D8E40055E327 /* GetCharactersUseCase.swift */,
+				7D161C54262AF99C00735881 /* GetDataUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -497,6 +519,7 @@
 				7D0227DF25F1515E00943686 /* RelogableRepository.swift */,
 				7D0227D325F14EC000943686 /* SessionRepositoryImpl.swift */,
 				7D41E37F2629DADF0055E327 /* MarvelRepositoryImpl.swift */,
+				7D161C5A262B368F00735881 /* DataRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -743,12 +766,15 @@
 				7D41E3862629E4A30055E327 /* ListCharacterRequest.swift in Sources */,
 				7DB848CA2503ECA200C9D6B5 /* Router.swift in Sources */,
 				7DF0EAF025FA80E30006B72A /* AppEndpoint.swift in Sources */,
+				7D161C63262B470B00735881 /* StorageImage.swift in Sources */,
 				7DB2C47A25067F4100E52BEF /* Colors+Extensions.swift in Sources */,
 				7D526BFE25F93419008D7844 /* SplashRouter.swift in Sources */,
 				7D0227EB25F154F000943686 /* NetworkMockClient.swift in Sources */,
 				7DC8BE3F250B50E80089191C /* Environment.swift in Sources */,
+				7D161C60262B38DD00735881 /* Storage.swift in Sources */,
 				7D0227D425F14EC000943686 /* SessionRepositoryImpl.swift in Sources */,
 				7D526B5125F39644008D7844 /* KeyChainImpl.swift in Sources */,
+				7D161C58262AF9CC00735881 /* DataRepository.swift in Sources */,
 				7D0227E025F1515E00943686 /* RelogableRepository.swift in Sources */,
 				7D41E3AC262AF1580055E327 /* CharacterCellViewModel.swift in Sources */,
 				7DC74603250D20910018CBE0 /* Strings+Extensions.swift in Sources */,
@@ -785,7 +811,9 @@
 				7D41E3802629DADF0055E327 /* MarvelRepositoryImpl.swift in Sources */,
 				7DB2C47725067E8E00E52BEF /* Fonts+Extension.swift in Sources */,
 				7DB2C481250690DA00E52BEF /* R.swift in Sources */,
+				7D161C5B262B368F00735881 /* DataRepositoryImpl.swift in Sources */,
 				7DF0EB0F260652A50006B72A /* AlertView.swift in Sources */,
+				7D161C55262AF99C00735881 /* GetDataUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
