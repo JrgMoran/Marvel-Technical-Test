@@ -28,6 +28,8 @@
 		7D41E3892629F19A0055E327 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3882629F19A0055E327 /* Dictionary+Extensions.swift */; };
 		7D41E38C2629FA550055E327 /* MarvelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E38B2629FA550055E327 /* MarvelResponse.swift */; };
 		7D41E398262AD0E60055E327 /* AppInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E397262AD0E60055E327 /* AppInjector.swift */; };
+		7D41E39C262AE21D0055E327 /* CacheClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E39B262AE21D0055E327 /* CacheClient.swift */; };
+		7D41E3A2262AE4680055E327 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3A1262AE4680055E327 /* Cache.swift */; };
 		7D526B5125F39644008D7844 /* KeyChainImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526B5025F39644008D7844 /* KeyChainImpl.swift */; };
 		7D526BFE25F93419008D7844 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526BFA25F93419008D7844 /* SplashRouter.swift */; };
 		7D526BFF25F93419008D7844 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526BFB25F93419008D7844 /* SplashViewController.swift */; };
@@ -113,6 +115,8 @@
 		7D41E3882629F19A0055E327 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 		7D41E38B2629FA550055E327 /* MarvelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResponse.swift; sourceTree = "<group>"; };
 		7D41E397262AD0E60055E327 /* AppInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjector.swift; sourceTree = "<group>"; };
+		7D41E39B262AE21D0055E327 /* CacheClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheClient.swift; sourceTree = "<group>"; };
+		7D41E3A1262AE4680055E327 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		7D526B5025F39644008D7844 /* KeyChainImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainImpl.swift; sourceTree = "<group>"; };
 		7D526BFA25F93419008D7844 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 		7D526BFB25F93419008D7844 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -213,9 +217,8 @@
 		7D0227D125F14E1D00943686 /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				7D0227D725F14F6800943686 /* SessionNetwork.swift */,
-				7D77C4EF25F38EA800F2A801 /* UserData.swift */,
-				7D41E3822629E13D0055E327 /* MarvelNetwork.swift */,
+				7D41E3A0262AE44D0055E327 /* Cache */,
+				7D41E39F262AE4440055E327 /* Network */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -227,6 +230,24 @@
 				7D41E3852629E4A30055E327 /* ListCharacterRequest.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		7D41E39F262AE4440055E327 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7D41E3822629E13D0055E327 /* MarvelNetwork.swift */,
+				7D0227D725F14F6800943686 /* SessionNetwork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7D41E3A0262AE44D0055E327 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				7D77C4EF25F38EA800F2A801 /* UserData.swift */,
+				7D41E3A1262AE4680055E327 /* Cache.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		7D526B6825F8E426008D7844 /* Home */ = {
@@ -489,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				7DF0EAF225FA86080006B72A /* AppSession.swift */,
+				7D41E39B262AE21D0055E327 /* CacheClient.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -714,6 +736,7 @@
 				7D0227EF25F1551C00943686 /* Network.swift in Sources */,
 				7D41E38C2629FA550055E327 /* MarvelResponse.swift in Sources */,
 				7DA978C52506A0A600BE95DB /* TextField+Skins.swift in Sources */,
+				7D41E39C262AE21D0055E327 /* CacheClient.swift in Sources */,
 				7DF0EAF325FA86080006B72A /* AppSession.swift in Sources */,
 				7D41E398262AD0E60055E327 /* AppInjector.swift in Sources */,
 				7D2A2F1A250504EA00E058CE /* Session.swift in Sources */,
@@ -729,6 +752,7 @@
 				7D0227E825F154DF00943686 /* NetworkClient.swift in Sources */,
 				7D0227C425F1407400943686 /* SessionRepository.swift in Sources */,
 				7DB8488C2503B4F800C9D6B5 /* SceneDelegate.swift in Sources */,
+				7D41E3A2262AE4680055E327 /* Cache.swift in Sources */,
 				7D41E37D2629D9FF0055E327 /* Character.swift in Sources */,
 				7DA978C325069F4800BE95DB /* UIImage+Extensions.swift in Sources */,
 				7DC74605250D30140018CBE0 /* Date+Extensions.swift in Sources */,

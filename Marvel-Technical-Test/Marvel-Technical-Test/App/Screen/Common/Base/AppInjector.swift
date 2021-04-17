@@ -51,6 +51,10 @@ final class AppInjector {
             KeyChainImpl()
         }
         
+        container.register(Cache.self) { r in
+            CacheClient.shared
+        }
+        
         container.register(UserData.self) { r in
             UserDataImpl(keyChain: r.resolve(KeyChain.self))
         }
@@ -66,7 +70,8 @@ final class AppInjector {
         }
         
         container.register(MarvelRepository.self) { r in
-            MarvelRepositoryImpl(network: r.resolve(MarvelNetwork.self)!)
+            MarvelRepositoryImpl(network: r.resolve(MarvelNetwork.self)!,
+                                 cache: r.resolve(Cache.self)!)
         }
         
         // MARK: - UseCases

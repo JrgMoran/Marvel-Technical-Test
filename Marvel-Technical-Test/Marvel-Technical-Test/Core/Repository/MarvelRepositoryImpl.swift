@@ -12,12 +12,16 @@ import RxSwift
 class MarvelRepositoryImpl: MarvelRepository {
     
     let network: MarvelNetwork
+    let cache: Cache
     
-    init(network: MarvelNetwork) {
+    init(network: MarvelNetwork, cache: Cache) {
         self.network = network
+        self.cache = cache
     }
     
     func listCharacters() -> Single<[Character]> {
-        return network.listCharacters().map({ $0.data.results })
+        return cache.cacheableRequest(network.listCharacters(),
+                                      key: CacheKey.listCharacters)
+            .map({ $0.data.results })
     }
 }
