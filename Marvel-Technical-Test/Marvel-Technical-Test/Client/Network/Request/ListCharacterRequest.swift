@@ -10,5 +10,14 @@ import Foundation
 struct ListCharacterRequest: AppRequest {
     var endpoint: AppEndpoint { .listCharacters }
     
-    var method: AppRequestMethod { .get } 
+    var method: AppRequestMethod { .get }
+    
+    var urlParams: [String : String]? {
+        return ["offset": "\(offset)"]
+    }
+    let offset: Int
+    
+    init(offset: Int) {
+        self.offset = offset
+    }
 }

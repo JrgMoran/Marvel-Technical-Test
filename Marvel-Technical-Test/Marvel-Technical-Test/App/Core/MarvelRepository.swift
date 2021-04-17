@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol MarvelRepository {
-    func listCharacters() -> Single<[Character]>
+    func listCharacters(_ offset: Int) -> Single<[Character]>
 }

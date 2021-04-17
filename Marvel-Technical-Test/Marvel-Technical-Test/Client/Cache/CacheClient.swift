@@ -29,7 +29,7 @@ class CacheClient: Cache {
     func cacheableRequest<T>(_ request: Single<T>, key: CacheKey) -> Single<T> {
         cleanExpired()
         
-        if let objectFromCache = objectsCached.first(where: {$0.key == key}) {
+        if let objectFromCache = objectsCached.first(where: {$0.key.value == key.value}) {
             if let object = objectFromCache.object as? T{
                 return Single.just(object)
             }
@@ -42,7 +42,7 @@ class CacheClient: Cache {
     }
     
     func remove(_ key: CacheKey){
-        if let index = objectsCached.firstIndex(where: {$0.key == key}){
+        if let index = objectsCached.firstIndex(where: {$0.key.value == key.value}){
             objectsCached.remove(at: index)
             remove(key)
         }

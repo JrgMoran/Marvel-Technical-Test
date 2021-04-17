@@ -20,7 +20,7 @@ class GetCharactersUseCase {
         print("- deinit: \(self)")
     }
     
-    func callAsFunction() -> Single<[Character]> {
-        return repository.listCharacters()
+    func callAsFunction(_ offset: Int) -> Single<[Character]> {
+        return repository.listCharacters(offset)
     }
 }

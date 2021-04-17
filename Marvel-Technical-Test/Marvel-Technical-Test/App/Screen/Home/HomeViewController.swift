@@ -43,8 +43,10 @@ class HomeViewController: ViewController, UITableViewDelegate {
     // MARK: Binding
     private func bindViewModel() {
         assert(viewModel != nil)
+        
         let input = HomeViewModel.Input(trigger: rx.viewDidAppear,
-                                        indexTap: tableView.rx.itemSelected.map({ $0.row }).asObservable())
+                                        indexTap: tableView.rx.itemSelected.map({ $0.row }).asObservable(),
+                                        indexWillView: tableView.rx.willDisplayCell.map({$0.indexPath.row}))
         let output = viewModel.transform(input: input)
         
         output.characters.bind(to: tableView.rx.items(cellIdentifier: CharacterCell.identifier,

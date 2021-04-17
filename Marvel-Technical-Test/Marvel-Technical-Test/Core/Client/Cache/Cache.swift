@@ -9,8 +9,17 @@
 import Foundation
 import RxSwift
 
-enum CacheKey: String {
-    case listCharacters
+enum CacheKey {
+    
+    case listCharacters(offset: Int)
+    
+    var value: String {
+        switch self {
+        
+        case .listCharacters(let offset):
+            return "listCharacters?offset=\(offset)"
+        }
+    }
 }
 
 protocol Cache {

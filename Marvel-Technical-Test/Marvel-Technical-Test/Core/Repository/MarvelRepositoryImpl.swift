@@ -19,9 +19,9 @@ class MarvelRepositoryImpl: MarvelRepository {
         self.cache = cache
     }
     
-    func listCharacters() -> Single<[Character]> {
-        return cache.cacheableRequest(network.listCharacters(),
-                                      key: CacheKey.listCharacters)
+    func listCharacters(_ offset: Int) -> Single<[Character]> {
+        return cache.cacheableRequest(network.listCharacters(offset),
+                                      key: CacheKey.listCharacters(offset: offset))
             .map({ $0.data.results })
     }
 }
