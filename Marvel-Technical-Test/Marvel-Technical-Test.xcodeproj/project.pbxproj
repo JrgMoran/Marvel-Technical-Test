@@ -30,6 +30,8 @@
 		7D41E398262AD0E60055E327 /* AppInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E397262AD0E60055E327 /* AppInjector.swift */; };
 		7D41E39C262AE21D0055E327 /* CacheClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E39B262AE21D0055E327 /* CacheClient.swift */; };
 		7D41E3A2262AE4680055E327 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3A1262AE4680055E327 /* Cache.swift */; };
+		7D41E3A8262AE71D0055E327 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3A6262AE71D0055E327 /* CharacterCell.swift */; };
+		7D41E3A9262AE71D0055E327 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D41E3A7262AE71D0055E327 /* CharacterCell.xib */; };
 		7D526B5125F39644008D7844 /* KeyChainImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526B5025F39644008D7844 /* KeyChainImpl.swift */; };
 		7D526BFE25F93419008D7844 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526BFA25F93419008D7844 /* SplashRouter.swift */; };
 		7D526BFF25F93419008D7844 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526BFB25F93419008D7844 /* SplashViewController.swift */; };
@@ -117,6 +119,8 @@
 		7D41E397262AD0E60055E327 /* AppInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjector.swift; sourceTree = "<group>"; };
 		7D41E39B262AE21D0055E327 /* CacheClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheClient.swift; sourceTree = "<group>"; };
 		7D41E3A1262AE4680055E327 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		7D41E3A6262AE71D0055E327 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		7D41E3A7262AE71D0055E327 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		7D526B5025F39644008D7844 /* KeyChainImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainImpl.swift; sourceTree = "<group>"; };
 		7D526BFA25F93419008D7844 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 		7D526BFB25F93419008D7844 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -250,9 +254,19 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		7D41E3A5262AE6ED0055E327 /* CharacterCell */ = {
+			isa = PBXGroup;
+			children = (
+				7D41E3A6262AE71D0055E327 /* CharacterCell.swift */,
+				7D41E3A7262AE71D0055E327 /* CharacterCell.xib */,
+			);
+			path = CharacterCell;
+			sourceTree = "<group>";
+		};
 		7D526B6825F8E426008D7844 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7D41E3A5262AE6ED0055E327 /* CharacterCell */,
 				7DF0EAE225FA7C6C0006B72A /* HomeRouter.swift */,
 				7DF0EAE325FA7C6C0006B72A /* HomeViewController.swift */,
 				7DF0EAE425FA7C6C0006B72A /* HomeViewModel.swift */,
@@ -639,6 +653,7 @@
 				7DB848932503B4FA00C9D6B5 /* Assets.xcassets in Resources */,
 				7DB2C46D25067CF300E52BEF /* Montserrat-ExtraLight.ttf in Resources */,
 				7DF0EAE925FA7C6C0006B72A /* HomeViewController.xib in Resources */,
+				7D41E3A9262AE71D0055E327 /* CharacterCell.xib in Resources */,
 				7DB2C46725067CF300E52BEF /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				7DB2C46425067CF300E52BEF /* Montserrat-ExtraLightItalic.ttf in Resources */,
 			);
@@ -743,6 +758,7 @@
 				7D526C0025F93419008D7844 /* SplashViewModel.swift in Sources */,
 				7DF0EAE625FA7C6C0006B72A /* HomeRouter.swift in Sources */,
 				7DC74607250D35640018CBE0 /* Double+Extensions.swift in Sources */,
+				7D41E3A8262AE71D0055E327 /* CharacterCell.swift in Sources */,
 				7DB848AA2503BACA00C9D6B5 /* ResourcingText.swift in Sources */,
 				7D41E3772629D8E40055E327 /* GetCharactersUseCase.swift in Sources */,
 				7DB848A92503BACA00C9D6B5 /* ResourcingImages.swift in Sources */,

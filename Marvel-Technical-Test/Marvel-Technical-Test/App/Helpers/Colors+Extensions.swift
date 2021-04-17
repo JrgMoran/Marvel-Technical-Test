@@ -11,10 +11,10 @@ import UIKit
 extension UIColor {
     
     /**
-    return orange color (248 89 30)
+    return red
     */
     class var main: UIColor {
-        return UIColor(red: 248/255, green: 89/255, blue: 30/255, alpha: 1)
+        return UIColor.red
     }
     
     /**

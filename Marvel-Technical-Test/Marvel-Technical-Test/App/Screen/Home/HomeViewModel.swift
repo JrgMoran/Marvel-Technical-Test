@@ -19,6 +19,7 @@ class HomeViewModel: ViewModel, ViewModelType {
     
     struct Input {
         let trigger: Observable<Void>
+        let indexTap: Observable<Int>
     }
     
     struct Output {

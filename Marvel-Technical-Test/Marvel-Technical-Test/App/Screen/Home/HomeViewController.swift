@@ -9,9 +9,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeViewController: ViewController {
+class HomeViewController: ViewController, UITableViewDelegate {
     
     // MARK: IBOutlet
+    @IBOutlet weak var tableView: UITableView!{
+        didSet {
+            tableView.register(UINib(nibName: CharacterCell.identifier, bundle: nil), forCellReuseIdentifier: CharacterCell.identifier)
+            tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        }
+    }
     
     // MARK: Injections
     var viewModel: HomeViewModel!
@@ -37,8 +43,13 @@ class HomeViewController: ViewController {
     // MARK: Binding
     private func bindViewModel() {
         assert(viewModel != nil)
-        let input = HomeViewModel.Input(trigger: rx.viewDidAppear)
-        let _ = viewModel.transform(input: input)
+        let input = HomeViewModel.Input(trigger: rx.viewDidAppear,
+                                        indexTap: tableView.rx.itemSelected.map({ $0.row }).asObservable())
+        let output = viewModel.transform(input: input)
+        
+        output.characters.bind(to: tableView.rx.items(cellIdentifier: CharacterCell.identifier, cellType: CharacterCell.self)){ (row,item,cell) in
+                    cell.configure(with: item)
+        }.disposed(by: disposeBag)
     }
 
 }
