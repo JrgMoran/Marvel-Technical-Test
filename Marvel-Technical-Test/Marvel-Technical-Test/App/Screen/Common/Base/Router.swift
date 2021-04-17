@@ -18,7 +18,7 @@ enum RouterMode {
 
 class Router {
     
-    var injector: DependencyInjector = DependencyInjector()
+    var injector: AppInjector = AppInjector.shared
     
     deinit {
         print("- deinit: \(self)")
@@ -91,5 +91,10 @@ class Router {
         window?.makeKeyAndVisible()
     }
     
-    
+    // MARK: - ViewControllers
+    static func firstViewController() -> ViewController {
+        let viewController = SplashViewController()
+        viewController.viewModel = AppInjector.shared.container.resolve(SplashViewModel.self, argument: SplashRouter())
+        return viewController
+    }
 }

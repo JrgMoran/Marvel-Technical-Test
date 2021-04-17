@@ -27,6 +27,7 @@
 		7D41E3862629E4A30055E327 /* ListCharacterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3852629E4A30055E327 /* ListCharacterRequest.swift */; };
 		7D41E3892629F19A0055E327 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E3882629F19A0055E327 /* Dictionary+Extensions.swift */; };
 		7D41E38C2629FA550055E327 /* MarvelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E38B2629FA550055E327 /* MarvelResponse.swift */; };
+		7D41E398262AD0E60055E327 /* AppInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41E397262AD0E60055E327 /* AppInjector.swift */; };
 		7D526B5125F39644008D7844 /* KeyChainImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526B5025F39644008D7844 /* KeyChainImpl.swift */; };
 		7D526BFE25F93419008D7844 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526BFA25F93419008D7844 /* SplashRouter.swift */; };
 		7D526BFF25F93419008D7844 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D526BFB25F93419008D7844 /* SplashViewController.swift */; };
@@ -36,7 +37,6 @@
 		7D77C4F025F38EA800F2A801 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77C4EF25F38EA800F2A801 /* UserData.swift */; };
 		7DA978C325069F4800BE95DB /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA978C225069F4800BE95DB /* UIImage+Extensions.swift */; };
 		7DA978C52506A0A600BE95DB /* TextField+Skins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA978C42506A0A600BE95DB /* TextField+Skins.swift */; };
-		7DB2C44C2505321000E52BEF /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2C44B2505321000E52BEF /* DependencyInjector.swift */; };
 		7DB2C44E2505380600E52BEF /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB2C44D2505380600E52BEF /* Observable+Extension.swift */; };
 		7DB2C46225067CF300E52BEF /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DB2C45025067CF200E52BEF /* Montserrat-Medium.ttf */; };
 		7DB2C46325067CF300E52BEF /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DB2C45125067CF200E52BEF /* Montserrat-Regular.ttf */; };
@@ -112,6 +112,7 @@
 		7D41E3852629E4A30055E327 /* ListCharacterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCharacterRequest.swift; sourceTree = "<group>"; };
 		7D41E3882629F19A0055E327 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 		7D41E38B2629FA550055E327 /* MarvelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelResponse.swift; sourceTree = "<group>"; };
+		7D41E397262AD0E60055E327 /* AppInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjector.swift; sourceTree = "<group>"; };
 		7D526B5025F39644008D7844 /* KeyChainImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainImpl.swift; sourceTree = "<group>"; };
 		7D526BFA25F93419008D7844 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 		7D526BFB25F93419008D7844 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +122,6 @@
 		7D77C4EF25F38EA800F2A801 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		7DA978C225069F4800BE95DB /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		7DA978C42506A0A600BE95DB /* TextField+Skins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Skins.swift"; sourceTree = "<group>"; };
-		7DB2C44B2505321000E52BEF /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		7DB2C44D2505380600E52BEF /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
 		7DB2C45025067CF200E52BEF /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		7DB2C45125067CF200E52BEF /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -423,7 +423,7 @@
 				7DB848C52503ECA100C9D6B5 /* ViewModel.swift */,
 				7DB848C62503ECA100C9D6B5 /* Router.swift */,
 				7DB848C82503ECA100C9D6B5 /* ViewController.swift */,
-				7DB2C44B2505321000E52BEF /* DependencyInjector.swift */,
+				7D41E397262AD0E60055E327 /* AppInjector.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -710,12 +710,12 @@
 				7D0227D425F14EC000943686 /* SessionRepositoryImpl.swift in Sources */,
 				7D526B5125F39644008D7844 /* KeyChainImpl.swift in Sources */,
 				7D0227E025F1515E00943686 /* RelogableRepository.swift in Sources */,
-				7DB2C44C2505321000E52BEF /* DependencyInjector.swift in Sources */,
 				7DC74603250D20910018CBE0 /* Strings+Extensions.swift in Sources */,
 				7D0227EF25F1551C00943686 /* Network.swift in Sources */,
 				7D41E38C2629FA550055E327 /* MarvelResponse.swift in Sources */,
 				7DA978C52506A0A600BE95DB /* TextField+Skins.swift in Sources */,
 				7DF0EAF325FA86080006B72A /* AppSession.swift in Sources */,
+				7D41E398262AD0E60055E327 /* AppInjector.swift in Sources */,
 				7D2A2F1A250504EA00E058CE /* Session.swift in Sources */,
 				7D526C0025F93419008D7844 /* SplashViewModel.swift in Sources */,
 				7DF0EAE625FA7C6C0006B72A /* HomeRouter.swift in Sources */,
