@@ -16,6 +16,7 @@ class HomeViewModel: ViewModel, ViewModelType {
     let getCharactersUseCase: GetCharactersUseCase
     
     fileprivate let characters: BehaviorRelay<[Character]> = BehaviorRelay(value: [])
+    fileprivate let isHiddenTableView: BehaviorRelay<Bool> = BehaviorRelay(value: true)
     
     var isMoreCharacters: Bool = true
     
@@ -27,6 +28,7 @@ class HomeViewModel: ViewModel, ViewModelType {
     
     struct Output {
         let characters: Observable<[Character]>
+        let isHiddenTableView: Observable<Bool>
     }
     
     // MARK: init & deinit
@@ -51,7 +53,25 @@ class HomeViewModel: ViewModel, ViewModelType {
             weakSelf.getCharacters(offset: 0)
 
         }.disposed(by: disposeBag)
-        return Output(characters: characters.asObservable())
+        
+        characters.subscribe {[weak self] (event) in
+            if let characters = event.element, characters.count > 0 {
+                self?.isHiddenTableView.accept(false)
+            } else {
+                self?.isHiddenTableView.accept(true)
+            }
+        }.disposed(by: disposeBag)
+        
+        input.indexTap.subscribe{[weak self] (event) in
+            
+            if let index = event.element, let characters = self?.characters.value,
+               index >= 0, index < characters.count {
+                self?.router.navigateToDetail(of: characters[index])
+            }
+        }.disposed(by: disposeBag)
+        
+        return Output(characters: characters.asObservable(),
+                      isHiddenTableView: isHiddenTableView.asObservable())
     }
     
     func getCharacters(offset: Int) {

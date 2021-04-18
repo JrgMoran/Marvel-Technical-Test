@@ -53,6 +53,8 @@ class HomeViewController: ViewController, UITableViewDelegate {
                                                       cellType: CharacterCell.self)){ (row,item,cell) in
                     cell.configure(with: item)
         }.disposed(by: disposeBag)
+        
+        output.isHiddenTableView.bind(to: tableView.rx.isHidden).disposed(by: disposeBag)
     }
 
 }

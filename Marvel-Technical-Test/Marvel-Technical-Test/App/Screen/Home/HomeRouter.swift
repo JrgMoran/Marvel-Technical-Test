@@ -16,5 +16,9 @@ class HomeRouter: Router {
         viewController.viewModel = injector.container.resolve(HomeViewModel.self, argument: self)
         navigate(to: viewController, mode: .new)
     }
+    
+    func navigateToDetail(of character: Character) {
+        // TODO:
+    }
 }
 

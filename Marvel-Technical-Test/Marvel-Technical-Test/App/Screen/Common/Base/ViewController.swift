@@ -20,10 +20,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
-            self?.view.endEditing(true)
-        }).disposed(by: disposeBag)
     }
     
     // MARK: NavigationController
@@ -60,6 +56,12 @@ class ViewController: UIViewController {
         
         // rightButtons
         self.navigationItem.rightBarButtonItems = rightBarButtonItems
+    }
+    
+    func inputTextInViewController() {
+        view.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
+            self?.view.endEditing(true)
+        }).disposed(by: disposeBag)
     }
 }
 
