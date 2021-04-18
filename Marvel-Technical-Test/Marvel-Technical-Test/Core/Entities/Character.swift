@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Character: Codable {
+struct Character: Codable, Equatable {
+    
     let id: Int
     let name, resultDescription: String
     let modified: String
@@ -23,6 +24,10 @@ struct Character: Codable {
         case id, name
         case resultDescription = "description"
         case modified, thumbnail, resourceURI, comics, series, stories, events, urls
+    }
+    
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 

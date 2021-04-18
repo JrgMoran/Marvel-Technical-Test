@@ -44,7 +44,7 @@ class HomeViewController: ViewController, UITableViewDelegate {
     private func bindViewModel() {
         assert(viewModel != nil)
         
-        let input = HomeViewModel.Input(trigger: rx.viewDidAppear,
+        let input = HomeViewModel.Input(trigger: rx.viewWillAppear,
                                         indexTap: tableView.rx.itemSelected.map({ $0.row }).asObservable(),
                                         indexWillView: tableView.rx.willDisplayCell.map({$0.indexPath.row}))
         let output = viewModel.transform(input: input)

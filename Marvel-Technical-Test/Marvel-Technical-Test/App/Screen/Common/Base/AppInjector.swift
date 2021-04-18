@@ -109,6 +109,11 @@ final class AppInjector {
         container.register(CharacterCellViewModel.self) { r in
             CharacterCellViewModel(getDataUseCase: r.resolve(GetDataUseCase.self)!)
         }
+        
+        container.register(CharacterDetailViewModel.self) { r, router, character in
+            CharacterDetailViewModel(router: router, character: character)
+        }
+        
 
     }
 }
