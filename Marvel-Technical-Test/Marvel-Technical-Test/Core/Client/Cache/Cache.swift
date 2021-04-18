@@ -12,12 +12,14 @@ import RxSwift
 enum CacheKey {
     
     case listCharacters(offset: Int)
+    case character(id: Int)
     
     var value: String {
         switch self {
-        
         case .listCharacters(let offset):
             return "listCharacters?offset=\(offset)"
+        case .character(let id):
+            return "character?id=\(id)"
         }
     }
 }

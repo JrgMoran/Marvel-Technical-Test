@@ -11,4 +11,5 @@ import RxSwift
 
 protocol MarvelNetwork {
     func listCharacters(_ offset: Int) -> Single<MarvelResponse<[Character]>>
+    func character(of id: Int) -> Single<MarvelResponse<[Character]>>
 }

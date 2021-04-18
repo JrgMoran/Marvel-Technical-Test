@@ -9,12 +9,12 @@ import Foundation
 
 enum AppEndpoint {
     case listCharacters
-    case detailCharacter
+    case detailCharacter(id: Int)
     
     var path: String {
         switch self {
-        case .listCharacters,
-             .detailCharacter: return "/v1/public/characters"
+        case .listCharacters:           return "/v1/public/characters"
+        case .detailCharacter(let id):  return "/v1/public/characters/\(id)"
         }
     }
     

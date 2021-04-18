@@ -27,6 +27,9 @@ class HomeViewController: ViewController, UITableViewDelegate {
     // MARK: View lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         bindViewModel()
     }
     
@@ -37,14 +40,14 @@ class HomeViewController: ViewController, UITableViewDelegate {
 
     // MARK: Configure View
     private func configureView(){
-        
+        self.title = nil
     }
     
     // MARK: Binding
     private func bindViewModel() {
         assert(viewModel != nil)
         
-        let input = HomeViewModel.Input(trigger: rx.viewDidAppear,
+        let input = HomeViewModel.Input(trigger: rx.viewWillAppear,
                                         indexTap: tableView.rx.itemSelected.map({ $0.row }).asObservable(),
                                         indexWillView: tableView.rx.willDisplayCell.map({$0.indexPath.row}))
         let output = viewModel.transform(input: input)
@@ -55,6 +58,12 @@ class HomeViewController: ViewController, UITableViewDelegate {
         }.disposed(by: disposeBag)
         
         output.isHiddenTableView.bind(to: tableView.rx.isHidden).disposed(by: disposeBag)
+        
+        tableView.rx.willDisplayCell.asObservable().subscribe { (cell, indexPath) in
+            if let cell = cell as? CharacterCell {
+                cell.applyGradient()
+            }
+        }.disposed(by: disposeBag)
     }
 
 }

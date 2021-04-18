@@ -75,11 +75,12 @@ class HomeViewModel: ViewModel, ViewModelType {
     }
     
     func getCharacters(offset: Int) {
+        guard offset >= characters.value.count else { return }
         if characters.value.count == 0 {
             isMoreCharacters = true
         }
         if isMoreCharacters {
-            showLoading()
+            if offset == 0 { showLoading() }
             getCharactersUseCase(offset).subscribe(onSuccess: { [weak self] (characters) in
                 guard let weakSelf = self else { return }
                 weakSelf.hideLoading()
@@ -88,7 +89,11 @@ class HomeViewModel: ViewModel, ViewModelType {
                     return
                 }
                 var allCharacters = weakSelf.characters.value
-                allCharacters.append(contentsOf: characters)
+                characters.forEach { (character) in
+                    if !allCharacters.contains(character) {
+                        allCharacters.append(character)
+                    }
+                }
                 weakSelf.characters.accept(allCharacters)
             }, onError: {[weak self] (error) in
                 self?.process(error: error)

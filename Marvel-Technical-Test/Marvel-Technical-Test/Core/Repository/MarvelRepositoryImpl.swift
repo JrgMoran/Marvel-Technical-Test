@@ -24,4 +24,17 @@ class MarvelRepositoryImpl: MarvelRepository {
                                       key: CacheKey.listCharacters(offset: offset))
             .map({ $0.data.results })
     }
+    
+    func character(of id: Int) -> Single<Character> {
+        
+        return cache.cacheableRequest(network.character(of: id),
+                                          key: CacheKey.character(id: id))
+            .flatMap { (response) -> Single<Character> in
+                if let character = response.data.results.first {
+                    return Single.just(character)
+                } else {
+                    return Single.error(AppError.notFound)
+                }
+            }
+    }
 }

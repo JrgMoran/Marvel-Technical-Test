@@ -1,15 +1,15 @@
 //
-//  GetCharactersUseCase.swift
+//  GetCharacterUseCase.swift
 //  Marvel-Technical-Test
 //
-//  Created by Jorge Morán on 16/4/21.
+//  Created by Jorge Morán on 18/4/21.
 //  Copyright © 2021 Jorge Morán. All rights reserved.
 //
 
 import Foundation
 import RxSwift
 
-class GetCharactersUseCase {
+class GetCharacterUseCase {
     let repository: MarvelRepository
     
     init(repository: MarvelRepository) {
@@ -20,7 +20,7 @@ class GetCharactersUseCase {
         print("- deinit: \(self)")
     }
     
-    func callAsFunction(_ offset: Int) -> Single<[Character]> {
-        return repository.listCharacters(offset).observeOn(MainScheduler.instance)
+    func callAsFunction(id: Int) -> Single<Character> {
+        return repository.character(of: id).observeOn(MainScheduler.instance)
     }
 }

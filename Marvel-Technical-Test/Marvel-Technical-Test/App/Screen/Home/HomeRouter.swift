@@ -18,7 +18,7 @@ class HomeRouter: Router {
     }
     
     func navigateToDetail(of character: Character) {
-        // TODO:
+        CharacterDetailRouter(with: character)
     }
 }
 
