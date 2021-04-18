@@ -16,7 +16,9 @@ class CharacterDetailViewController: ViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var comicLabel: UILabel!
+    @IBOutlet weak var comicCollectionView: UICollectionView!
     @IBOutlet weak var seriesLabel: UILabel!
+    @IBOutlet weak var seriesCollectionView: UICollectionView!
     
     // MARK: Injections
     var viewModel: CharacterDetailViewModel!
@@ -56,6 +58,7 @@ class CharacterDetailViewController: ViewController {
     
     private func configure(character: Character) {
         nameLabel.text(character.name, withSkin: LabelSkin.mainTitle)
+        descriptionLabel.text(character.resultDescription, withSkin: LabelSkin.body)
         
     }
 

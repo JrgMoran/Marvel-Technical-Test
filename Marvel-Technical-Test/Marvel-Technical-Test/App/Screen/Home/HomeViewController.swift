@@ -27,6 +27,9 @@ class HomeViewController: ViewController, UITableViewDelegate {
     // MARK: View lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         bindViewModel()
     }
     
@@ -37,7 +40,7 @@ class HomeViewController: ViewController, UITableViewDelegate {
 
     // MARK: Configure View
     private func configureView(){
-        
+        self.title = nil
     }
     
     // MARK: Binding

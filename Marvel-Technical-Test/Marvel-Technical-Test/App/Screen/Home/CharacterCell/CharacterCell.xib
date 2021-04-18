@@ -69,6 +69,7 @@
             <connections>
                 <outlet property="imageCharacter" destination="zEd-Hw-OWL" id="exd-4p-hlg"/>
                 <outlet property="nameCharacter" destination="1Xg-h0-vzL" id="Gho-Ut-5Lb"/>
+                <outlet property="viewText" destination="CaI-S5-AvR" id="Bst-Pt-Ysd"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="115.17857142857142"/>
         </tableViewCell>

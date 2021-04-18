@@ -21,6 +21,6 @@ class GetCharacterUseCase {
     }
     
     func callAsFunction(id: Int) -> Single<Character> {
-        return repository.character(of: id)
+        return repository.character(of: id).observeOn(MainScheduler.instance)
     }
 }

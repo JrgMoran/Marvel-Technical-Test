@@ -21,6 +21,6 @@ class GetDataUseCase {
     }
     
     func callAsFunction(from urlStr: String) -> Single<UIImage> {
-        return repository.getImage(from: urlStr)
+        return repository.getImage(from: urlStr).observeOn(MainScheduler.instance)
     }
 }

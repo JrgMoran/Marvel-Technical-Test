@@ -21,6 +21,6 @@ class GetCharactersUseCase {
     }
     
     func callAsFunction(_ offset: Int) -> Single<[Character]> {
-        return repository.listCharacters(offset)
+        return repository.listCharacters(offset).observeOn(MainScheduler.instance)
     }
 }

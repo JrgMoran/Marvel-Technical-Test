@@ -11,10 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetailViewController" customModule="Marvel_Technical_Test" customModuleProvider="target">
             <connections>
+                <outlet property="comicCollectionView" destination="ceu-tb-yvC" id="6pG-bO-wjx"/>
                 <outlet property="comicLabel" destination="jwc-Hr-9WF" id="XGc-q8-gr1"/>
                 <outlet property="descriptionLabel" destination="cCZ-s8-AsF" id="N76-IQ-0uO"/>
                 <outlet property="imageView" destination="ePX-2S-gZq" id="DHf-0v-O23"/>
                 <outlet property="nameLabel" destination="dXO-r4-nbr" id="2Fj-I7-tkk"/>
+                <outlet property="seriesCollectionView" destination="BmV-Lt-KPe" id="BMk-HT-R36"/>
                 <outlet property="seriesLabel" destination="tiu-Qg-e72" id="vdo-nR-c2X"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

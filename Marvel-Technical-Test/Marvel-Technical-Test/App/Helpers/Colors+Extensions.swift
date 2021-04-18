@@ -24,4 +24,8 @@ extension UIColor {
         return UIColor(red: 148/255, green: 170/255, blue: 171/255, alpha: 1)
     }
     
+    class var grayClear: UIColor {
+        return UIColor.lightGray.withAlphaComponent(0.7)
+    }
+    
 }
