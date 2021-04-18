@@ -23,6 +23,8 @@
 		7D161C6C262C3F5800735881 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D161C68262C3F5800735881 /* CharacterDetailViewController.swift */; };
 		7D161C6D262C3F5800735881 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D161C69262C3F5800735881 /* CharacterDetailViewModel.swift */; };
 		7D161C6E262C3F5800735881 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D161C6A262C3F5800735881 /* CharacterDetailViewController.xib */; };
+		7D161C71262C685900735881 /* GetCharacterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D161C70262C685900735881 /* GetCharacterUseCase.swift */; };
+		7D161C74262C6D6A00735881 /* CharacterDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D161C73262C6D6900735881 /* CharacterDetailRequest.swift */; };
 		7D2A2F112504CAD500E058CE /* KeyboardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2A2F102504CAD500E058CE /* KeyboardScrollView.swift */; };
 		7D2A2F13250503A900E058CE /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2A2F12250503A900E058CE /* LoginUseCase.swift */; };
 		7D2A2F1A250504EA00E058CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2A2F19250504EA00E058CE /* Session.swift */; };
@@ -122,6 +124,8 @@
 		7D161C68262C3F5800735881 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		7D161C69262C3F5800735881 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		7D161C6A262C3F5800735881 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
+		7D161C70262C685900735881 /* GetCharacterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacterUseCase.swift; sourceTree = "<group>"; };
+		7D161C73262C6D6900735881 /* CharacterDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailRequest.swift; sourceTree = "<group>"; };
 		7D2A2F102504CAD500E058CE /* KeyboardScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScrollView.swift; sourceTree = "<group>"; };
 		7D2A2F12250503A900E058CE /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		7D2A2F19250504EA00E058CE /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 			children = (
 				7DF0EAEB25FA80770006B72A /* Common */,
 				7D41E3852629E4A30055E327 /* ListCharacterRequest.swift */,
+				7D161C73262C6D6900735881 /* CharacterDetailRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 				7D2A2F12250503A900E058CE /* LoginUseCase.swift */,
 				7D41E3762629D8E40055E327 /* GetCharactersUseCase.swift */,
 				7D161C54262AF99C00735881 /* GetDataUseCase.swift */,
+				7D161C70262C685900735881 /* GetCharacterUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -784,6 +790,7 @@
 				7DF0EAE825FA7C6C0006B72A /* HomeViewModel.swift in Sources */,
 				7D41E37A2629D9BA0055E327 /* MarvelRepository.swift in Sources */,
 				7DF0EAE725FA7C6C0006B72A /* HomeViewController.swift in Sources */,
+				7D161C71262C685900735881 /* GetCharacterUseCase.swift in Sources */,
 				7D41E3862629E4A30055E327 /* ListCharacterRequest.swift in Sources */,
 				7DB848CA2503ECA200C9D6B5 /* Router.swift in Sources */,
 				7DF0EAF025FA80E30006B72A /* AppEndpoint.swift in Sources */,
@@ -823,6 +830,7 @@
 				7DB8488C2503B4F800C9D6B5 /* SceneDelegate.swift in Sources */,
 				7D41E3A2262AE4680055E327 /* Cache.swift in Sources */,
 				7D41E37D2629D9FF0055E327 /* Character.swift in Sources */,
+				7D161C74262C6D6A00735881 /* CharacterDetailRequest.swift in Sources */,
 				7DA978C325069F4800BE95DB /* UIImage+Extensions.swift in Sources */,
 				7DC74605250D30140018CBE0 /* Date+Extensions.swift in Sources */,
 				7DB2C47D250682F700E52BEF /* Label+Skins.swift in Sources */,

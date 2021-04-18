@@ -97,6 +97,10 @@ final class AppInjector {
             GetDataUseCase(repository: r.resolve(DataRepository.self)!)
         }
         
+        container.register(GetCharacterUseCase.self) { r in
+            GetCharacterUseCase(repository: r.resolve(MarvelRepository.self)!)
+        }
+        
         // MARK: - ViewModels
         container.register(SplashViewModel.self) { r, router in
             SplashViewModel(router: router)
@@ -111,7 +115,9 @@ final class AppInjector {
         }
         
         container.register(CharacterDetailViewModel.self) { r, router, character in
-            CharacterDetailViewModel(router: router, character: character)
+            CharacterDetailViewModel(router: router,
+                                     character: character,
+                                     getCharacterUseCase: r.resolve(GetCharacterUseCase.self)!)
         }
         
 

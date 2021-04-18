@@ -10,7 +10,7 @@ import Foundation
 
 class Downloader {
     
-    let LIMIT_DATA_LOG: Int = 2000
+    let LIMIT_DATA_LOG: Int = 200
     
     lazy var session: URLSession = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
     

@@ -11,4 +11,5 @@ import RxSwift
 
 protocol MarvelRepository {
     func listCharacters(_ offset: Int) -> Single<[Character]>
+    func character(of id: Int) -> Single<Character>
 }
