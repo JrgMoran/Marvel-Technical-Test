@@ -14,6 +14,7 @@
                 <outlet property="comicCollectionView" destination="ceu-tb-yvC" id="6pG-bO-wjx"/>
                 <outlet property="comicLabel" destination="jwc-Hr-9WF" id="XGc-q8-gr1"/>
                 <outlet property="descriptionLabel" destination="cCZ-s8-AsF" id="N76-IQ-0uO"/>
+                <outlet property="gradientView" destination="bUH-MB-Nfg" id="EFY-ye-I9P"/>
                 <outlet property="imageView" destination="ePX-2S-gZq" id="DHf-0v-O23"/>
                 <outlet property="nameLabel" destination="dXO-r4-nbr" id="2Fj-I7-tkk"/>
                 <outlet property="seriesCollectionView" destination="BmV-Lt-KPe" id="BMk-HT-R36"/>
@@ -70,13 +71,13 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-Hr-9WF">
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-Hr-9WF">
                                             <rect key="frame" x="16" y="61" width="343" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ceu-tb-yvC">
+                                        <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ceu-tb-yvC">
                                             <rect key="frame" x="0.0" y="98" width="375" height="150"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -89,13 +90,13 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                         </collectionView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiu-Qg-e72">
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiu-Qg-e72">
                                             <rect key="frame" x="16" y="280" width="343" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BmV-Lt-KPe">
+                                        <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BmV-Lt-KPe">
                                             <rect key="frame" x="0.0" y="317" width="375" height="150"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -159,6 +160,7 @@
                 <constraint firstItem="ePX-2S-gZq" firstAttribute="top" secondItem="9Ka-Ig-Lf6" secondAttribute="top" id="UVG-3S-7bK"/>
                 <constraint firstItem="0Gw-wR-m7X" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="UZ8-EP-4e0"/>
                 <constraint firstItem="6gE-fa-jGC" firstAttribute="leading" secondItem="9Ka-Ig-Lf6" secondAttribute="leading" id="aqi-RI-VsJ"/>
+                <constraint firstItem="bUH-MB-Nfg" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="cvt-4w-sr2"/>
                 <constraint firstItem="9Ka-Ig-Lf6" firstAttribute="trailing" secondItem="ePX-2S-gZq" secondAttribute="trailing" id="cxO-iU-Ivc"/>
                 <constraint firstItem="IQl-zq-qEN" firstAttribute="height" secondItem="ePX-2S-gZq" secondAttribute="height" id="hlN-6U-4bJ"/>
                 <constraint firstItem="6gE-fa-jGC" firstAttribute="bottom" secondItem="9Ka-Ig-Lf6" secondAttribute="bottom" id="nRZ-sB-12m"/>

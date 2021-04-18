@@ -58,6 +58,12 @@ class HomeViewController: ViewController, UITableViewDelegate {
         }.disposed(by: disposeBag)
         
         output.isHiddenTableView.bind(to: tableView.rx.isHidden).disposed(by: disposeBag)
+        
+        tableView.rx.willDisplayCell.asObservable().subscribe { (cell, indexPath) in
+            if let cell = cell as? CharacterCell {
+                cell.applyGradient()
+            }
+        }.disposed(by: disposeBag)
     }
 
 }

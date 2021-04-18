@@ -25,7 +25,7 @@ extension UIColor {
     }
     
     class var grayClear: UIColor {
-        return UIColor.lightGray.withAlphaComponent(0.7)
+        return UIColor.black.withAlphaComponent(0.5)
     }
     
 }

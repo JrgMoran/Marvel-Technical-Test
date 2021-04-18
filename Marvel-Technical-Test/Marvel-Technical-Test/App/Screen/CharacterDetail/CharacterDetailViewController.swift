@@ -13,6 +13,7 @@ class CharacterDetailViewController: ViewController {
     
     // MARK: IBOutlet
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var comicLabel: UILabel!
@@ -29,17 +30,31 @@ class CharacterDetailViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        title = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureView()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = [UIColor.clear.cgColor, UIColor.grayClear.cgColor]
+        gradient.locations = [0.0 , 1.0]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
+        gradient.frame = CGRect(x: 0.0, y: 0.0, width: gradientView.frame.size.width, height: gradientView.frame.size.height)
+        gradientView.layer.insertSublayer(gradient, at: 0)
+    }
 
     // MARK: Configure View
     private func configureView(){
         comicLabel.text(R.text.comic, withSkin: LabelSkin.sectionTitle)
         seriesLabel.text(R.text.series, withSkin: LabelSkin.sectionTitle)
+        imageView.contentMode = .scaleAspectFill
     }
     
     // MARK: Binding
