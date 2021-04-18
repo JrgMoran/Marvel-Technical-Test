@@ -117,7 +117,8 @@ final class AppInjector {
         container.register(CharacterDetailViewModel.self) { r, router, character in
             CharacterDetailViewModel(router: router,
                                      character: character,
-                                     getCharacterUseCase: r.resolve(GetCharacterUseCase.self)!)
+                                     getCharacterUseCase: r.resolve(GetCharacterUseCase.self)!,
+                                     getDataUseCase: r.resolve(GetDataUseCase.self)!)
         }
         
 

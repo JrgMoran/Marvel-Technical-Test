@@ -15,22 +15,28 @@ class CharacterDetailViewModel: ViewModel, ViewModelType {
     let router: CharacterDetailRouter
     let character: Character
     let getCharacterUseCase: GetCharacterUseCase
+    let getDataUseCase: GetDataUseCase
+    
     let characterReactive: BehaviorRelay<Character?> = BehaviorRelay(value: nil)
+    let image: BehaviorRelay<UIImage?> = BehaviorRelay(value: nil)
     
     struct Input {
         let trigger: Observable<Void>
     }
     
     struct Output {
-        let characters: Observable<Character>
+        let character: Observable<Character>
+        let image: Observable<UIImage>
     }
     
     // MARK: init & deinit
     init(router: CharacterDetailRouter,
          character: Character,
-         getCharacterUseCase: GetCharacterUseCase) {
+         getCharacterUseCase: GetCharacterUseCase,
+         getDataUseCase: GetDataUseCase) {
         self.router = router
         self.character = character
+        self.getDataUseCase = getDataUseCase
         self.getCharacterUseCase = getCharacterUseCase
         super.init(router: router)
     }
@@ -49,7 +55,22 @@ class CharacterDetailViewModel: ViewModel, ViewModelType {
             
         }.disposed(by: disposeBag)
         
-        return Output(characters: characterReactive.asObservable().filterNil())
+        characterReactive.asObservable()
+            .filterNil()
+            .map({ $0.thumbnail.urlStr })
+            .subscribe { [weak self] (event) in
+                guard let weakSelf = self, let url = event.element else { return }
+                weakSelf.getDataUseCase(from: url).subscribe { (image) in
+                    weakSelf.image.accept(image)
+                } onError: { (_) in
+                    
+                }.disposed(by: weakSelf.disposeBag)
+
+            }.disposed(by: disposeBag)
+        
+        
+        return Output(character: characterReactive.asObservable().filterNil(),
+                      image: image.asObservable().filterNil())
     }
     
     // MARK: Logic

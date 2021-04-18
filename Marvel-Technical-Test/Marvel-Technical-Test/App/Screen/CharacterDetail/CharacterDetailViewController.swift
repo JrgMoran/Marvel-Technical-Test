@@ -12,6 +12,7 @@ import RxCocoa
 class CharacterDetailViewController: ViewController {
     
     // MARK: IBOutlet
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var comicLabel: UILabel!
@@ -35,14 +36,27 @@ class CharacterDetailViewController: ViewController {
 
     // MARK: Configure View
     private func configureView(){
-        
+        comicLabel.text(R.text.comic, withSkin: LabelSkin.sectionTitle)
+        seriesLabel.text(R.text.series, withSkin: LabelSkin.sectionTitle)
     }
     
     // MARK: Binding
     private func bindViewModel() {
         assert(viewModel != nil)
         let input = CharacterDetailViewModel.Input(trigger: rx.viewWillAppear)
-        let _ = viewModel.transform(input: input)
+        let output = viewModel.transform(input: input)
+        output.character.subscribe {[weak self] (event) in
+            if let character = event.element {
+                self?.configure(character: character)
+            }
+        }.disposed(by: disposeBag)
+        
+        output.image.bind(to: imageView.rx.image).disposed(by: disposeBag)
+    }
+    
+    private func configure(character: Character) {
+        nameLabel.text(character.name, withSkin: LabelSkin.mainTitle)
+        
     }
 
 }
