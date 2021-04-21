@@ -18,7 +18,7 @@ $ pod install
 La aplicación se basa en una arquitectura MVVM (Model-View-ViewModel) con RXSwift. En el proyecto se diferencian varios actores que son:
 
 ### View
-La vista representa la parte visible de la aplicacion. Esto son los botones y demás elementos que el usuario ve. Esta compuesto del ViewController y de su archivo .xib. El ViewController tendra un objeto de viewModel donde pasará las acciones del usuario y este quedará a la espera de los datos del viewmodel
+La vista representa la parte visible de la aplicación. Esto son los botones y demás elementos que el usuario ve. Está compuesto del ViewController y de su archivo .xib. El ViewController tendrá un objeto de viewModel donde pasará las acciones del usuario y este quedará a la espera de los datos del viewmodel
 
 
 ### ViewModel
@@ -41,7 +41,7 @@ Al margen de recibir las acciones del usuario procedente de la vista también es
  
  
  ### Router
-Es el encargado de la navegación entre pantallas. Sirve  tanto para navegar a otras pantallas como para autopresentarse el módulo.
+Es el encargado de la navegación entre pantallas. Sirve tanto para navegar a otras pantallas como para autopresentarse el módulo.
 También configura correctamente los objetos con Swinject.
 
 ```
@@ -66,7 +66,7 @@ Pequeñas clases pensadas para la obtención de un dato. Estas llaman a los Repo
 
 
 ### Repository
-Clase que se encarga de decidir como se trabajan con los datos. Elije si estos datos deben salir de Red, Cache, BBDD, Local...
+Clase que se encarga de decidir cómo se trabajan con los datos. Elije si estos datos deben salir de Red, Cache, BBDD, Local...
 
 ### Client
-Cada una de las clases de esta parte, se encarga de trabajar con el dato en su medio. Asi pués la clase NetworkClient es el encargado de trabajar con los datos en red.
+Cada una de las clases de esta parte se encarga de trabajar con el dato en su medio. Así pues la clase NetworkClient es el encargado de trabajar con los datos en red.
