@@ -1,5 +1,5 @@
 PODS:
-  - ProgressHUD (13.4)
+  - ProgressHUD (13.6)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -13,12 +13,12 @@ PODS:
   - Swinject (2.7.1)
 
 DEPENDENCIES:
-  - ProgressHUD (~> 13.4)
-  - RxCocoa (~> 5)
+  - ProgressHUD (~> 13.6)
+  - RxCocoa (~> 5.1.1)
   - RxGesture (~> 3.0.2)
-  - RxSwift (~> 5)
-  - SkyFloatingLabelTextField (~> 3.0)
-  - Swinject
+  - RxSwift (~> 5.1.1)
+  - SkyFloatingLabelTextField (~> 3.8.0)
+  - Swinject (~> 2.7.1)
 
 SPEC REPOS:
   trunk:
@@ -31,7 +31,7 @@ SPEC REPOS:
     - Swinject
 
 SPEC CHECKSUMS:
-  ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
@@ -39,6 +39,6 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: e495154704de016d3104ec90285081c47828d8d2
+PODFILE CHECKSUM: def80184a9166e2ded2880b05c093570f9f96a58
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

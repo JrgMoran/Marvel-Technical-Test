@@ -4,12 +4,12 @@
 target 'Marvel-Technical-Test' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'RxSwift', '~> 5'
-  pod 'RxCocoa', '~> 5'
+  pod 'RxSwift', '~> 5.1.1'
+  pod 'RxCocoa', '~> 5.1.1'
   pod 'RxGesture', '~> 3.0.2'
-  pod 'SkyFloatingLabelTextField', '~> 3.0'
-  pod 'ProgressHUD', '~> 13.4'
-  pod 'Swinject'
+  pod 'SkyFloatingLabelTextField', '~> 3.8.0'
+  pod 'ProgressHUD', '~> 13.6'
+  pod 'Swinject', '~> 2.7.1'
 
   # Pods for Marvel-Technical-Test
 
